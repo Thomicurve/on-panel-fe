@@ -1,0 +1,22 @@
+<p>login works!</p>
+<form>
+  <mat-form-field>
+    <mat-label>Correo electrónico</mat-label>
+    <input name="email" matInput [(ngModel)]="userLogin.email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input
+      name="password"
+      [(ngModel)]="userLogin.password"
+      required
+      matInput
+      [type]="hide ? 'password' : 'text'">
+    <button class="password-button"
+      mat-icon-button matSuffix
+      (click)="hide = !hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button (click)="onSubmitLogin()" mat-raised-button color="primary">Enviar</button>
+</form>
